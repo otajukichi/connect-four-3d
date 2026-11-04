@@ -1,0 +1,273 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.page {
+  width: 100%;
+  max-width: 1360px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  gap: 25px;
+  flex: 1;
+  min-height: 0;
+  margin-top: 0;
+}
+
+.board-area {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background: white;
+  border: 1px solid #dce1e1;
+}
+
+.board {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  cursor: grab;
+}
+
+.hint {
+  flex: none;
+  margin: 0;
+  padding: 9px 0 11px;
+  color: #839198;
+  font-size: 11px;
+  text-align: center;
+}
+
+.sidebar {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sidebar h1 {
+  margin: 0 0 6px;
+  font-size: 21px;
+  line-height: 1.3;
+  font-weight: 650;
+}
+
+.description {
+  margin: 0 0 12px;
+  color: #718089;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.mode-controls {
+  display: grid;
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid #dce1e1;
+  border-bottom: 1px solid #dce1e1;
+}
+
+.mode-controls label {
+  display: grid;
+  gap: 4px;
+  color: #40545c;
+  font-size: 11px;
+}
+
+.mode-controls select,
+.mode-controls input[type="number"] {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 9px;
+  color: #263943;
+  background: #fff;
+  border: 1px solid #b6c2c6;
+  border-radius: 2px;
+  font: inherit;
+  font-size: 12px;
+}
+
+.turn-choice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 29px;
+  color: #40545c;
+  font-size: 11px;
+}
+
+.turn-choice > div {
+  display: flex;
+}
+
+.mode-controls .turn-choice button {
+  width: auto;
+  min-height: 28px;
+  margin: 0;
+  padding: 4px 14px;
+  border-color: #b6c2c6;
+  font-size: 11px;
+}
+
+.mode-controls .turn-choice button + button {
+  border-left: 0;
+}
+
+.mode-controls .turn-choice button[aria-pressed="true"] {
+  background: #e6ecee;
+  font-weight: 600;
+}
+
+.mode-controls .checkbox-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 23px;
+  cursor: pointer;
+}
+
+.checkbox-control input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: #ca704e;
+}
+
+.mode-controls select:disabled,
+.mode-controls input:disabled {
+  opacity: 0.6;
+}
+
+button {
+  width: 100%;
+  min-height: 36px;
+  margin-top: 12px;
+  padding: 7px 10px;
+  background: transparent;
+  border: 1px solid #aeb8bc;
+  color: #26343c;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.mode-controls button {
+  margin-top: 2px;
+}
+
+.batch-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.batch-actions button {
+  flex: 1;
+  min-width: 0;
+}
+
+button:hover:not(:disabled) {
+  background: #ebefef;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.batch-progress {
+  margin: 0;
+  color: #5e727c;
+  font-size: 11px;
+}
+
+.status {
+  margin-top: 12px;
+  padding: 7px 0;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.players {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 15px;
+  margin-top: 8px;
+  font-size: 11px;
+}
+
+.players span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.piece {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.one {
+  background: #ce6c4b;
+}
+
+.two {
+  background: #477c9f;
+}
+
+.moves {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.batch-results {
+  margin-top: 13px;
+  padding-top: 11px;
+  border-top: 1px solid #dce1e1;
+}
+
+.batch-results h2 {
+  margin: 0 0 5px;
+  font-size: 15px;
+}
+
+.batch-results p {
+  margin: 0 0 6px;
+  color: #60717a;
+  font-size: 11px;
+}
+
+.batch-results > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid #e1e6e6;
+  font-size: 12px;
+}
+
+.batch-results strong {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.error {
+  margin: 8px 0 0;
+  color: #c45d43;
+  font-size: 11px;
+}
